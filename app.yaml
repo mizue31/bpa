@@ -1,0 +1,44 @@
+application: avian-compiler-805
+version: 1
+runtime: python27
+threadsafe: true
+api_version: 1
+
+handlers:
+# Static assets
+- url: /favicon\.ico
+  static_files: favicon.ico
+  upload: favicon\.ico
+- url: /js
+  static_dir: static/js
+- url: /css
+  static_dir: static/css
+- url: /images
+  static_dir: static/images
+- url: /templates
+  static_dir: templates
+- url: /menu
+  static_files: templates/menu.html
+  upload: templates/menu\.html
+  secure: always
+- url: /widget
+  static_files: templates/widget.html
+  upload: templates/widget\.html
+- url: /
+  static_files: templates/index.html
+  upload: templates/index\.html
+  secure: always
+#- url: /.*
+#  script: bpa.app
+#  login: required
+#  secure: always
+
+# Endpoints handler
+- url: /_ah/spi/.*
+  script: bpa_api.APPLICATION
+
+libraries:
+- name: pycrypto
+  version: latest
+- name: endpoints
+  version: 1.0

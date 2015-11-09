@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Blog Posting Application</title>
+    <script src="/js/angular.min.js"></script>
+    <script src="/js/app.js"></script>
+    <script type="text/javascript" src="/js/base.js"></script>
+    <link rel="stylesheet" href="/css/base.css" />
+    <script type="text/javascript" src="/js/render.js"></script>
+  </head>
+
+  <body ng-app="bpa">
+    <div class="container" ng-controller="MainController">
+    <div id="content">
+      <div id="signin">
+        <div id="signinStatusContainer">
+          <!-- Need an extra container since G+ overrides CSS on the actual button -->
+          <div id="signinButtonContainer" class="visible">
+            <div id="signinButton"></div>
+          </div>
+          <a href="#" onclick="google.devrel.samples.ttt.signout();" id="signedInStatus">Sign Out</a>
+        </div>
+        <span id="userLabel">(not signed in)</span>
+      </div>
+
+      <hr>
+      <!-- New Post Form -->
+      <!-- New Post Form -->
+      <!-- New Post Form -->
+
+      <div id="newpost">
+        <div id="sectionTitle">New Post</div>
+        <form ng-submit="addPost()">
+          <input type="text" ng-model="post_title" required placeholder="input title" />
+          <br>
+          <textarea ng-model="post_content" rows=3 required placeholder="input content"></textarea>
+          <br>
+          <button class="newPostBtn" type="submit"> Submit Post (Angular) </button>
+        </form>
+
+        <!-----------
+        <form id="newpostform" action="google.devrel.samples.ttt.submitNewPost()" method="post">
+            <input type="text" name="post_title" size="50%" required placeholder="input tiltle here">
+            <br>
+            <textarea name="post_content" rows=3 cols="50%" required placeholder="input content here"></textarea>
+          <div>
+            <button class="newPostBtn" type="button" onClick="google.devrel.samples.ttt.submitNewPost();">Submit Post non-Angular</button>
+          </div>
+        </form>
+        ------>
+
+      </div>
+
+      <hr>
+      <!-- Button toolbar -->
+      <!-- Button toolbar -->
+      <!-- button toolbar -->
+      <div id="buttonToolbar">
+        <div class="btn-group">
+          <button class="btn btn-default active">
+            My Posts
+          </button>
+          <button class="btn btn-default" ng-click="listPosts()">
+            All Posts
+          </button>
+        </div>
+      </div>
+
+      <hr>
+      <!-- Post List -->
+      <!-- Post List -->
+      <!-- Post List -->
+
+      <div id="sectionTitle">Listing Posts</div>
+      <div id="angularallposts">
+      angular all posts
+      <ul class="listPosts">
+        <div class="post-item" ng-repeat="p in posts">
+          <span class="listTitle" ng-click="setSel($index)">{{p.post_title}}</span>
+          <span class="listDate">{{p.post_timestamp|date:'short'}}, </span>
+          <span class="listAuthor">author:{{p.post_author}}, </span>
+          <span class="listAuthor">key:{{p.post_key}}, </span>
+
+          <div ng-show="showContent($index)">
+            <span class="listContent">{{p.post_content}}</span><br>
+            <span class="listComment">{{p.cmt_content}}</span><br>
+            <form ng-submit="addComment()" ng-controller="CmtController">
+              <input type="text" ng-model="p.post_key" name=post_key  value="{{p.post_key}}" />
+              <textarea ng-model="cmt_content" required placeholder="input comment:{{p.post_key}}"></textarea>
+              <pre>ppp:{{p.post_key}}</pre>
+              <br>
+              <button class="newPostBtn" type="cancel" ng-click="showContent($index)">Cancel</button>
+              <button class="newPostBtn" type="submit"">Submit Comment (Angular)</button>
+            </form>
+          </div>
+        </div>
+      </ul>
+      </div>
+
+      <div id="allposts"></div>
+
+      <span ng-show="showCont">
+        <span class="listContent">{{p.post_content}}</span><br>
+        <span class="listComment">{{p.cmt_content}}</span><br>
+        <span class="listComment">{{p.post_key}}</span><br>
+        <form>
+          <textarea ng-model="cmt_content" placeholder="input comment">{{p.post_key}}{{p.post_content}}</textarea>
+          <br>
+          <input type="button" value="Cancel" ng-click="showContent(p)">
+          <input type="submit" ng-click="addComment()"> Submit Post (Angular) </button>
+        </form>
+      </span>
+    </div>
+    </div>
+  </body>
+</html>

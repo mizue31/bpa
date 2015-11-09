@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Blog Posting Application</title>
+    <script src="/js/angular.min.js"></script>
+    <script src="/js/angular-route.min.js"></script>
+    <script src="/js/mobile-angular-ui.min.js"></script>
+
+    <script src="/js/base.js"></script>
+    <link rel="stylesheet" href="/css/mobile-angular-ui-base.min.css" />
+    <link rel="stylesheet" href="/css/base.css" />
+    <script type="text/javascript" src="/js/render.js"></script>
+  </head>
+
+  <body ng-app="bpa">
+    <div class="container" ng-controller="MainController">
+    <div id="content">
+      <div class="scrollable">
+      <div class="scrollable-header">
+          <div id="signin">
+            <div id="signinStatusContainer">
+              <div id="signinButtonContainer" class="visible">
+                <div id="signinButton"></div>
+              </div>
+              <a href="#" onclick="google.devrel.samples.ttt.signout();" id="signedInStatus">Sign Out</a>
+            </div>
+            <span id="userLabel">(not signed in)</span>
+          </div>
+
+      <hr>
+
+          <div class='section' id='example-html'>
+
+            <ui-state id='activeTab' default='0'></ui-state>
+            <ul class="nav nav-tabs">
+              <li ui-class="{'active': activeTab == 1}">
+              <a ui-set="{'activeTab': 1}" ng-click="goListAll()">All Posts</a>
+              </li>
+              <li ui-class="{'active': activeTab == 2}">
+              <a ui-set="{'activeTab': 2}" ng-click="goListMyPosts()">My Posts</a>
+              </li>
+              <li ui-class="{'active': activeTab == 3}">
+              <a ui-set="{'activeTab': 3}" ng-click="goNewPost()">New Post</a>
+              </li>
+            </ul>
+
+            <div ui-if="activeTab == 0">
+              <h3 class="page-header"></h3>
+            </div>
+            <div ui-if="activeTab == 1">
+              <h3 class="page-header">All Posts</h3>
+            </div>
+            <div ui-if="activeTab == 2">
+              <h3 class="page-header">My Posts</h3>
+            </div>
+            <div ui-if="activeTab == 3">
+              <h3 class="page-header">New Post</h3>
+            </div>
+
+          </div> <!-- section -->
+      </div>
+
+<!--
+      <div id="buttonToolbar">
+        <div class="btn-group">
+          <button class="btn btn-default active" ng-click="goListAll()">
+          List All Posts
+          </button>
+          <button class="btn btn-default active" ng-click="goListMyPosts()">
+          List My Posts
+          </button>
+          <button class="btn btn-default active" ng-click="goNewPost()">
+          New Post 
+          </button>
+        </div>
+      </div>
+-->
+
+
+      <div class="scrollable-content">
+        <div>
+          <div ng-view>
+          </div>
+        </div>
+
+      </div> <!-- scrollable-content -->
+    </div> <!-- scrollable -->
+    </div> <!-- content -->
+    </div> <!-- container, MainController -->
+
+  </body>
+</html>

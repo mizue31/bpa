@@ -1,0 +1,218 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+body {
+  margin: 0px;
+  padding: 0px;
+  font-size: 10pt;
+  font-family: "Open Sans", "Helvetica", "Arial";
+}
+#content {
+  width: 100%;
+}
+#signin {
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  display: box;
+  box-orient: horizontal;
+  padding: 1em;
+  background-color: whiteSmoke;
+  border-bottom: 1pt solid #E5E5E5;
+}
+#board, #warning {
+  margin: 1em;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: center;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: center;
+  display: box;
+  box-orient: vertical;
+  box-align: center;
+}
+#gameHistoryWrapper {
+  background-color: whiteSmoke;
+}
+#victory {
+  height: 1em;
+  padding: 5pt;
+  font-weight: bold;
+}
+
+/* General section title */
+
+#sectionTitle {
+  font-size: 24pt;
+  color: DarkBlue;
+}
+
+
+/* New Post Bar */
+/* New Post Bar */
+/* New Post Bar */
+
+#newpost {
+  /*background-color: Gainsboro;*/
+  padding-left: 3em;
+}
+
+#newcomment {
+  /*background-color: Gainsboro;*/
+  padding-left: 6em;
+}
+
+#viewpost {
+  /*background-color: Gainsboro;*/
+  padding-left: 3em;
+  padding-right: 3em;
+}
+#viewtitle {
+  /*background-color: lightBlue;*/
+  font-size: 1.5em;
+  word-break:break-all;
+}
+#viewcontent {
+  /*background-color: Gainsboro;*/
+  font-size: 1.2em;
+  word-break:break-all;
+}
+#viewcomment {
+  /*background-color: Gainsboro;*/
+  padding-left: 6em;
+  padding-right: 3em;
+  word-break:break-all;
+}
+
+.inputBox {
+  font-size: 12pt;
+  width: 80%;
+}
+
+button.newPostBtn {
+  background: #EEE;
+  border-top: 3px solid #DDD;
+  border-left: 3px solid #DDD;
+  border-right: 3px solid #BBB;
+  border-bottom: 3px solid #BBB;
+  color: #111;
+  font-size: 1.2em;
+  padding: 10px 10;
+}
+
+/* Button Tool Bar */
+/* Button Tool Bar */
+/* Button Tool Bar */
+
+#buttonToolbar {
+  background-color: gray;
+  font-size: 18pt;
+}
+/* Button Tool Bar */
+button.btn {
+  font-size: 1.2em;
+  font-weight: bold;
+  border-top: 3px solid #DDD;
+  border-left: 5px solid #DDD;
+  border-right: 5px solid #BBB;
+  border-bottom: 3px solid #BBB;
+  padding: 10px 25px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
+/* List Posts part */
+/* List Posts part */
+/* List Posts part */
+
+#listPosts li{
+  list-style: none
+}
+#listPosts li:nth-child(even){
+  background-color: #EEFFFF;
+}
+#listPosts li:nth-child(odd){
+  background-color: #D7EEFF;
+}
+.postitems {
+  line-height: 240%;
+}
+ul.listPosts {
+  list-style-type: none;
+  font-weight: bold;
+}
+
+.listTitle {
+  font-size: 12pt;
+  display: inline-block;
+  /*background-color: lightBlue;*/
+}
+.listDate {
+  font-size: 6pt;
+  color: gray;
+}
+.listAuthor {
+  font-size: 6pt;
+  color: gray;
+}
+.listContent {
+  border-style: solid;
+  border-width: thin;
+  border-color: gray;
+  font-size: 12pt;
+}
+.listComment {
+  font-size: 6pt;
+  color: red;
+  border-width: thin;
+  border-color: gray;
+  border-style: solid;
+}
+
+/* Initial element visibility */
+.hidden {
+  display: none !important;
+}
+
+/* Signin styles */
+#signinStatusContainer {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+}
+
+#signinStatusContainer > :not(.visible) {
+  display: none;
+}
+
+/* post table style */
+
+.posttable {
+  width: 80%;
+  border-coppapse: separate;
+}
+.posttable th{
+  width: 25%;
+  padding: 6px;
+  text-align: top;
+  color: #333;
+  background-color: LightGray;
+  border: 1px solid #b9b9b9;
+  font-size: 10px;
+}
+.posttable td{
+  padding: 6px;
+  background-color: #fff;
+  border: 1px solid #b9b9b9;
+  font-size: 10px;
+}
+.page-header-x {
+  padding-bottom: 3px;
+  margin: 40px 0 20px;
+  border-bottom: 1px solid #eeeeee;
+}

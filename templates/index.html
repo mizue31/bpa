@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<!-- Copy and paste here the "Sign-in button javascript" you downloaded from Developer Console as gitkit-signin-button.html -->
+
+<script type="text/javascript" src="/js/gitkit.js"></script>
+<link type=text/css rel=stylesheet href="/css/gitkit.css" />
+<script type=text/javascript>
+  window.google.identitytoolkit.signInButton(
+    '#navbar', // accepts any CSS selector
+    {
+      widgetUrl: "/widget",
+      signOutUrl: "/",
+    }
+  );
+</script>
+
+<!-- End configuration -->
+
+</head>
+<body>
+
+<!-- Include the sign in button widget with the matching 'navbar' id -->
+<div id="navbar"></div>
+<!-- End identity toolkit widget -->
+
+<p>Enter Blog Posting Application. Only Google account is available temporarily.
+<!--
+  {{ CONTENT }}
+-->
+</p>
+</body>
+</html>

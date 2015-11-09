@@ -1,0 +1,24 @@
+indexes:
+
+- kind: Score
+  properties:
+  - name: player
+  - name: played
+    direction: desc
+
+- kind: Score
+  properties:
+  - name: player
+  - name: outcome
+
+- kind: Post01
+  properties:
+  - name: post_author
+  - name: post_timestamp
+    direction: desc
+
+- kind: Comment01
+  properties:
+  - name: cmt_post
+  - name: cmt_timestamp
+    direction: desc

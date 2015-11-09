@@ -1,0 +1,9 @@
+{
+  "widgetUrl": "http://localhost:10080/widget",
+  "signInSuccessUrl": "/",
+  "signOutUrl": "/",
+  "oobActionUrl": "/",
+  "apiKey": "AIzaSyDwo7DJD3YsVdsX1saS_j6bDlzhqYYiFxg",
+  "siteName": "this site",
+  "signInOptions": ["password","google","facebook"]
+}

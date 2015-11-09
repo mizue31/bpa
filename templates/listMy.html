@@ -1,0 +1,19 @@
+<div id="newpost">
+  <!--<div id="sectionTitle">My Posts</div>-->
+  <div ng-init="listMyPosts()"></div>
+  <div id="angularallposts">
+    <ul id="listPosts">
+        <li class="postitems" ng-repeat="p in posts">
+          <input type="hidden" ng-model="data.text" value="{{p.post_key}}" />
+          <span class="listTitle" ng-click="goViewPost(p.post_key)">{{p.post_title}}</span>
+          <span class="listAuthor">author:{{p.post_author}}, </span>
+          <span class="listDate">{{p.post_timestamp|date:'short'}}, </span>
+<!--
+          <span class="listAuthor">key:{{p.post_key}}, </span>
+-->
+
+        </li>
+    </ul>
+  <div id="allposts"></div>
+  </div>
+</div>

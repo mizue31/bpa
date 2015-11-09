@@ -1,0 +1,27 @@
+<pre>{{framework}}</pre>
+<div id="viewpost">
+  <span id="viewtitle">
+  {{post_title}}
+  </span>
+  <span class="listDate"> {{post_timestamp}} </span>
+  <span class="listAuthor"> {{post_author}} </span>
+  <div id="viewcontent">
+{{post_content}}
+  </div>
+</div>
+
+<hr>
+
+<div id="viewcomment" ng-repeat="c in comments">
+  <span class="comment"> {{c.cmt_content}} </span>
+  <span class="listDate"> {{c.cmt_timestamp}} </span>
+</div>
+
+<br>
+<div id="newcomment">
+  New comment
+  <form ng-submit="addComment()">
+    <textarea ng-model="cmt_content" class="inputBox" rows=2 required placeholder="enter your comment here"></textarea><br>
+    <button class="newPostBtn" type="submit"> Submit </button>
+  </form>
+</div>
